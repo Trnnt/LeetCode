@@ -8,12 +8,14 @@ I use this repository to track my problem-solving journey, improve my coding ski
 
 ## 📊 LeetCode Progress
 
+<!-- LEETCODE_STATS_START -->
 | Difficulty | Solved |
 | ---------- | -----: |
-| 🟢 Easy    |      0 |
-| 🟡 Medium  |      0 |
-| 🔴 Hard    |      0 |
-| **Total**  |  **0** |
+| 🟢 Easy    | 1 |
+| 🟡 Medium  | 0 |
+| 🔴 Hard    | 0 |
+| **Total**  | **1** |
+<!-- LEETCODE_STATS_END -->
 
 > 📈 This section will be automatically updated as I solve more problems.
 
