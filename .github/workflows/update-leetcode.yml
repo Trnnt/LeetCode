@@ -1,0 +1,90 @@
+name: Update LeetCode Progress
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-progress:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update LeetCode statistics
+        run: |
+          python3 << 'PY'
+          from pathlib import Path
+          import re
+
+          easy = 0
+          medium = 0
+          hard = 0
+
+          for directory in Path(".").iterdir():
+              if not directory.is_dir():
+                  continue
+
+              readme = directory / "README.md"
+
+              if not readme.exists():
+                  continue
+
+              content = readme.read_text(encoding="utf-8")
+
+              if re.search(r'\bEasy\b', content):
+                  easy += 1
+              elif re.search(r'\bMedium\b', content):
+                  medium += 1
+              elif re.search(r'\bHard\b', content):
+                  hard += 1
+
+          total = easy + medium + hard
+
+          table = f"""| Difficulty | Solved |
+          | ---------- | -----: |
+          | 🟢 Easy    | {easy} |
+          | 🟡 Medium  | {medium} |
+          | 🔴 Hard    | {hard} |
+          | **Total**  | **{total}** |"""
+
+          readme = Path("README.md")
+          content = readme.read_text(encoding="utf-8")
+
+          pattern = r'<!-- LEETCODE_STATS_START -->.*?<!-- LEETCODE_STATS_END -->'
+
+          replacement = (
+              "<!-- LEETCODE_STATS_START -->\n"
+              + table +
+              "\n<!-- LEETCODE_STATS_END -->"
+          )
+
+          content = re.sub(
+              pattern,
+              replacement,
+              content,
+              flags=re.DOTALL
+          )
+
+          readme.write_text(content, encoding="utf-8")
+          PY
+
+      - name: Commit updated statistics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add README.md
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update LeetCode progress"
+            git push
+          fi
