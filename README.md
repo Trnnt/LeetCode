@@ -13,8 +13,8 @@ I use this repository to track my problem-solving journey, improve my coding ski
 | ---------- | -----: |
 | 🟢 Easy    | 6 |
 | 🟡 Medium  | 1 |
-| 🔴 Hard    | 0 |
-| **Total**  | **7** |
+| 🔴 Hard    | 1 |
+| **Total**  | **8** |
 <!-- LEETCODE_STATS_END -->
 
 > 📈 This section will be automatically updated as I solve more problems.
