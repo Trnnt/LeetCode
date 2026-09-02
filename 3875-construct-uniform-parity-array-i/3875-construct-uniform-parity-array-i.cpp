@@ -9,6 +9,10 @@ public:
             else
             odd = false;
         }
-        return true;
+        if(even && odd){
+            return false;
+        }else{
+            return true;
+        }
     }
 };
