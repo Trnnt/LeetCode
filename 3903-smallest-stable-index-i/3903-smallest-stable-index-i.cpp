@@ -6,7 +6,7 @@ public:
             int mx = nums[i];
             int mn = nums[i];
 
-            for(int j=0; j<=i; j++){
+            for(int j=0; j<i; j++){
                 mx = max(mx , nums[j]);
             }
             for(int j=i; j<nums.size(); j++){
