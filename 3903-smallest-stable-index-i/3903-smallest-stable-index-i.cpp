@@ -3,7 +3,7 @@ public:
     int firstStableIndex(vector<int>& nums, int k) {
         // int ans=0;
         for(int i=0; i<nums.size(); i++){
-            int mx = nums[0];
+            int mx = nums[i];
             int mn = nums[i];
 
             for(int j=0; j<=i; j++){
