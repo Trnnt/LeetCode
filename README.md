@@ -11,10 +11,10 @@ I use this repository to track my problem-solving journey, improve my coding ski
 <!-- LEETCODE_STATS_START -->
 | Difficulty | Solved |
 | ---------- | -----: |
-| 🟢 Easy    | 18 |
+| 🟢 Easy    | 19 |
 | 🟡 Medium  | 7 |
 | 🔴 Hard    | 1 |
-| **Total**  | **26** |
+| **Total**  | **27** |
 <!-- LEETCODE_STATS_END -->
 
 > 📈 This section will be automatically updated as I solve more problems.
