@@ -7,9 +7,9 @@ public:
         }
         double max_sum = current_sum;
         for(int i=0; i<nums.size()-k; i++){
-            current_sum = current_sum - nums[i] +nums[i+k];
+            current_sum = current_sum - nums[i] + nums[i+k];
             max_sum = max(current_sum, max_sum);
         }
-        return max_sum /k;
+        return max_sum / k;
     }
 };
