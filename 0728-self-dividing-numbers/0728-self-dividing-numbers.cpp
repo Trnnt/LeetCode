@@ -4,18 +4,18 @@ public:
         vector<int> ans;
     
         for(int i =left; i<=right; i++){
-            bool valid = true;
+           
             int temp = i;
         
             while(temp > 0){
                 int digit = temp %10;
                 if(digit ==0 || i % digit !=0){
-                    valid = false;
+                    
                     break;
                 }
                 temp = temp / 10;
             }
-        if(valid){
+        if(temp ==0){
             ans.push_back(i);
             }
         }
