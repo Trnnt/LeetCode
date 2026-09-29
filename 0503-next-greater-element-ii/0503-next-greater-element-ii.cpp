@@ -1,17 +1,16 @@
 class Solution {
 public:
     vector<int> nextGreaterElements(vector<int>& nums) {
-        vector<int> ans;
+        vector<int> ans(nums.size(), -1);
         for(int i=0; i<nums.size(); i++){
-            int found = -1;
-            for(int j=1; j<nums.size(); j++){
-                int index = (i+j) % nums.size();
-                if(nums[index] > nums[i]){
-                    found = nums[index];
+            int j = (i+1) % nums.size();
+            while(j != i){
+                if(nums[j] > nums[i]){
+                    ans[i]= nums[j];
                     break;
                 }
+                j = (j+1) % nums.size();
             }
-            ans.push_back(found);
         }
         return ans;
     }
