@@ -12,9 +12,9 @@ I use this repository to track my problem-solving journey, improve my coding ski
 | Difficulty | Solved |
 | ---------- | -----: |
 | 🟢 Easy    | 26 |
-| 🟡 Medium  | 9 |
+| 🟡 Medium  | 10 |
 | 🔴 Hard    | 1 |
-| **Total**  | **36** |
+| **Total**  | **37** |
 <!-- LEETCODE_STATS_END -->
 
 > 📈 This section will be automatically updated as I solve more problems.
