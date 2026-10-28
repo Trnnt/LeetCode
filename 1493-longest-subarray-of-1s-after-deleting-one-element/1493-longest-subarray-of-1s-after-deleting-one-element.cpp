@@ -15,7 +15,7 @@ public:
                 }
                 left++;
             }
-            ans = max(ans, i-left+1-1);
+            ans = max(ans, i-left);
         }
         return ans;
     }
